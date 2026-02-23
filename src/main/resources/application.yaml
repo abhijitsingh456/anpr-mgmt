@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: anpr-mgmt
+
+  profiles:
+    active: local   # Default profile while developing
+
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+# Logging (common defaults)
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: WARN
+
+# Actuator (common, secure paths per profile later)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized

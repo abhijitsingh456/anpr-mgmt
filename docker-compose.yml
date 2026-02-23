@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: abhijit
+      POSTGRES_PASSWORD: abhijit
+      POSTGRES_DB: anpr-mgmt
+    ports:
+      - "5432:5432"
+    volumes:
+      - anpr_data:/var/lib/postgresql/data
+volumes:
+  anpr_data:
