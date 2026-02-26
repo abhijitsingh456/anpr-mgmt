@@ -6,5 +6,5 @@ import org.springframework.web.multipart.MultipartFile;
 public interface UploadService {
     UploadJobResponse getStatus(Long jobId);
     UploadJobResponse uploadVehicle(MultipartFile file);
-    //UploadJobResponse uploadWorkOrder(MultipartFile file);
+    UploadJobResponse uploadWorkOrder(MultipartFile file);
 }

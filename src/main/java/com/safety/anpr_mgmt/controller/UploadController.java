@@ -23,6 +23,14 @@ public class UploadController {
         return ResponseEntity.accepted().body(uploadJobResponse);
     }
 
+    @PostMapping(value = "/work-orders", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<UploadJobResponse> uploadWorkOrders(@RequestParam("file") MultipartFile file){
+
+        UploadJobResponse uploadJobResponse = uploadService.uploadWorkOrder(file);
+
+        return ResponseEntity.accepted().body(uploadJobResponse);
+    }
+
     @GetMapping("/status/{job_id}")
     public ResponseEntity<UploadJobResponse> getStatus(@PathVariable Long job_id){
 
