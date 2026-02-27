@@ -39,3 +39,6 @@ management:
   endpoint:
     health:
       show-details: when_authorized
+
+streetsOnCloud:
+  api-key: ${STREETS_ON_CLOUD_API_KEY}
