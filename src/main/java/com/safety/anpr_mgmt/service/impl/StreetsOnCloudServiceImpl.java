@@ -38,7 +38,7 @@ public class StreetsOnCloudServiceImpl implements StreetsOnCloudService {
     private String apiKey;
 
     @Override
-    @Scheduled(cron = "0 45 11 * * ?", zone = "Asia/Kolkata")
+    @Scheduled(cron = "0 00 01 * * ?", zone = "Asia/Kolkata")
     public void fetchViolationRecords() {
         LocalDate targetDate = LocalDate.now().minusDays(1);
 
@@ -164,7 +164,7 @@ public class StreetsOnCloudServiceImpl implements StreetsOnCloudService {
         }
 
         log.info("Completed fetch and record job. Total tickets processed: {}.\n" +
-                "Details not found for: {}.\n" +
-                "Work Order details not for: {}.\n", tickets.size(), vehicleDetailNotFound, workOrderDetailNotFound);
+                "Vehicle details not found for: {}.\n" +
+                "Vehicle found but Work Order details not for: {}.\n", tickets.size(), vehicleDetailNotFound, workOrderDetailNotFound);
     }
 }
